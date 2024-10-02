@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="ip1" />
+      <input type="text" id="ip2" />
+      <input type="submit" />
+    </form>
+    <script>
+      form = document.getElementById("form");
+      let arr = [];
+           c=0
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        ip1 = document.getElementById("ip1");
+        ip2 = document.getElementById("ip2");
+        let data = { name: ip1.value, city: ip2.value };
+        arr.push(data);
+        localStorage.setItem("details", JSON.stringify(arr));
+           getdata=JSON.parse(localStorage.getItem("details"))            
+      
+         Username=getdata[c].name
+         Password=getdata[c].city
+          para=document.createElement("p")
+          para1=document.createElement("p")
+          document.body.appendChild(para)
+          document.body.appendChild(para1)
+          para.innerHTML="UserName :"+" "+ Username
+          para1.innerHTML="Password :"+" "+ Password
+          c++
+
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- div=document.createElement("div")
+       document.body.appendChild(div)
+       para1=document.createElement("p")
+       para1.innerHTML=
+       para2=document.createElement("p")
+     
+       div.appendchild(para1)
+       div.appendchild(para1) -->
